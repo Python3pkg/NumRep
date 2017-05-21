@@ -24,14 +24,14 @@ try:
         num = None
         try:
             if PY2:
-                num = int(raw_input("Type the number you want to convert: "))
-            else:
                 num = int(input("Type the number you want to convert: "))
+            else:
+                num = int(eval(input("Type the number you want to convert: ")))
         except ValueError:
             print('Not a valid Number')
             continue
         if num:
-            print(NumRep(num))
+            print((NumRep(num)))
         else:
             sys.exit(0)
 except (KeyboardInterrupt, EOFError):
